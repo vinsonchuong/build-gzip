@@ -9,7 +9,9 @@ function isDirectory(filePath) {
 async function gzip(filePath) {
   await new Promise((resolve, reject) => {
     fs.createReadStream(filePath)
-      .pipe(zlib.createGzip())
+      .pipe(zlib.createGzip({
+        level: zlib.Z_BEST_COMPRESSION
+      }))
       .pipe(fs.createWriteStream(`${filePath}.gz`))
       .on('close', resolve)
       .on('error', reject);
