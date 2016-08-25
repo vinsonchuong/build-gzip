@@ -1,7 +1,7 @@
 {
   "name": "build-gzip",
   "stage": "compress",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Compress static assets after compilation",
   "keywords": [],
   "homepage": "https://github.com/vinsonchuong/build-gzip",
