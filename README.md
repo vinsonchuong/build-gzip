@@ -1,18 +1,37 @@
 # build-gzip
 [![Build Status](https://travis-ci.org/vinsonchuong/build-gzip.svg?branch=master)](https://travis-ci.org/vinsonchuong/build-gzip)
-[![Code Climate](https://codeclimate.com/github/vinsonchuong/build-gzip/badges/gpa.svg)](https://codeclimate.com/github/vinsonchuong/build-gzip)
 
-Prints Hello World!
+Compress static assets after compilation
 
 ## Installing
 `build-gzip` is available as an
 [npm package](https://www.npmjs.com/package/build-gzip).
 
 ## Usage
+Add `build-bin` and `build-gzip` to the `package.json`.
+
+```json
+{
+  "name": "project",
+  "private": true,
+  "scripts": {
+    "build": "build"
+  },
+  "devDependencies": {
+    "build-bin": "^0.0.6",
+    "build-gzip": "^0.0.1"
+  }
+}
+```
+
 From the command line, run:
 ```bash
-build-gzip
+npm run build
 ```
+
+`build-gzip` will compress all files in the `dist` directory into new files
+suffixed with `.gz`. `build-bin` will ensure that compilation plugins run first
+before this compression plugin.
 
 ## Development
 ### Getting Started
